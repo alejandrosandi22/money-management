@@ -7,12 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "@uiball/loaders": "^1.2.6",
     "autoprefixer": "^10.4.14",
     "next": "13.2.4",
     "postcss": "^8.4.21",
@@ -22,8 +27,10 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.2.4",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-react": "^7.32.2",
