@@ -43,7 +43,7 @@ export default NextAuth({
     signIn: '/',
     signOut: '/signin',
     error: '/signin?status=error',
-    verifyRequest: '/signin/verify-request',
+    verifyRequest: '/signin/verification-request',
     newUser: '/',
   },
 });

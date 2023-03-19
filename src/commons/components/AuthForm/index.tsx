@@ -1,10 +1,7 @@
 import { IconArrowRight } from '@tabler/icons-react';
 import { useState } from 'react';
+import { AuthFormProps } from '../../../types';
 import { IconFacebook, IconGoogle, IconSlack } from '../../utils/icons';
-
-interface AuthFormProps {
-  type: 'register' | 'signin';
-}
 
 export default function AuthForm({ type }: AuthFormProps) {
   const [email, setEmail] = useState<string>('');
@@ -22,14 +19,28 @@ export default function AuthForm({ type }: AuthFormProps) {
             type='email'
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-            placeholder='email@domail.com'
+            placeholder='name@domain.com'
             className='block w-full rounded border border-gray-300 p-2.5 text-gray-900 hover:bg-gray-100 focus:border-primary focus:ring-primary sm:text-sm'
           />
         </div>
         {type === 'signin' && (
-          <div>
-            <input type='checkbox' name='remember-me' id='remember-me' />
-            Remember me
+          <div className='mb-6 mt-3'>
+            <div className='flex items-start'>
+              <div className='flex items-center'>
+                <input
+                  id='remember'
+                  aria-describedby='remember'
+                  type='checkbox'
+                  className='focus:ring-3 h-4 w-4 rounded border border-gray-300 accent-primary focus:ring-primary'
+                />
+                <label
+                  htmlFor='remember'
+                  className='ml-2 text-base font-medium text-primary'
+                >
+                  Remember me
+                </label>
+              </div>
+            </div>
           </div>
         )}
         <button className='hover-button mt-3 flex w-full justify-center gap-2 rounded bg-primary py-3 text-base font-medium text-white hover:bg-primary/95'>

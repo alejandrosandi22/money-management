@@ -1,8 +1,4 @@
-interface IconsProps {
-  className?: string;
-  color?: string;
-  size?: number;
-}
+import { IconsProps } from '../../types';
 
 export function IconGoogle({ className, size = 24 }: IconsProps) {
   return (
