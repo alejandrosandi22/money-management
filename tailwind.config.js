@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#000A14',
+        secondary: '#0077BE',
+      },
       zIndex: {
         60: '60',
         70: '70',
@@ -19,5 +23,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ['@tailwindcss/forms'],
 };
