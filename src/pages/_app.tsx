@@ -12,11 +12,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleStart = (url: string) => {
-      url !== router.asPath && setLoading(true);
-    };
-    const handleComplete = (url: string) =>
-      url === router.asPath && setLoading(false);
+    const handleStart = () => setLoading(true);
+    const handleComplete = () => setLoading(false);
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
@@ -39,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
             Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
       `}</style>
-      <div className='overflow-x-hidden min-h-screen'>
+      <div className={`relative ${loading ? 'h-screen overflow-hidden' : ''}`}>
         <Loader loading={loading} />
         <Component {...pageProps} />
       </div>
