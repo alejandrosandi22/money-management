@@ -9,8 +9,12 @@ declare global {
       SLACK_CLIENT_ID: string;
       SLACK_CLIENT_SECRET: string;
       SLACK_VERIFICATION_TOKEN: string;
-      NODEMAILER_SMTP: string;
-      NODEMAILER_PORT: number;
+      EMAIL_SERVER_USER: string;
+      EMAIL_SERVER_PASSWORD: string;
+      EMAIL_SERVER_HOST: string;
+      EMAIL_SERVER_PORT: number;
+      EMAIL_FROM: string;
+      DATABASE_URL: string;
     }
   }
 }

@@ -1,13 +1,23 @@
 import { IconArrowRight } from '@tabler/icons-react';
-import { useState } from 'react';
+import { Ring } from '@uiball/loaders';
+import { signIn } from 'next-auth/react';
+import { FormEvent, useState } from 'react';
 import { AuthFormProps } from '../../../types';
 import { IconFacebook, IconGoogle, IconSlack } from '../../utils/icons';
 
 export default function AuthForm({ type }: AuthFormProps) {
   const [email, setEmail] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    signIn('email', { email }).finally(() => setLoading(false));
+  };
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label
             htmlFor='email'
@@ -44,8 +54,16 @@ export default function AuthForm({ type }: AuthFormProps) {
           </div>
         )}
         <button className='hover-button mt-3 flex w-full justify-center gap-2 rounded bg-primary py-3 text-base font-medium text-white hover:bg-primary/95'>
-          Continue
-          <IconArrowRight size={24} color='#fff' />
+          {loading ? (
+            <div>
+              <Ring size={24} color='#fff' />
+            </div>
+          ) : (
+            <>
+              Continue
+              <IconArrowRight size={24} color='#fff' />
+            </>
+          )}
         </button>
       </form>
       <p className='w-full text-center text-base font-medium text-primary'>
