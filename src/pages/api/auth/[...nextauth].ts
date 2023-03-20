@@ -40,12 +40,26 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.SLACK_CLIENT_SECRET,
     }),
   ],
+  session: {
+    maxAge: 30 * 24 * 60 * 60,
+    updateAge: 24 * 60 * 60,
+    strategy: 'jwt',
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+    async session({ session, token, user }) {
+      session.user = token;
+      return session;
+    },
+  },
   pages: {
-    signIn: '/',
-    signOut: '/signin',
-    error: '/signin?status=error',
-    verifyRequest: '/signin/verify-request',
-    newUser: '/',
+    signIn: '/auth/signin',
+    signOut: '/auth/signout',
+    error: '/auth/error', // Error code passed in query string as ?error=
+    verifyRequest: '/auth/verification-request',
+    newUser: '/auth/new-user', // New users will be directed here on first sign in (leave the property out if not of interest)
   },
 };
 
