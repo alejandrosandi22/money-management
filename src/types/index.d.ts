@@ -11,3 +11,9 @@ export interface IconsProps {
   color?: string;
   size?: number;
 }
+
+export interface SEOLayoutProps {
+  children: React.ReactNode;
+  pageTitle?: string;
+  pageDescription?: string;
+}
