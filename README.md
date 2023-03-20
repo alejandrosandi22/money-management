@@ -88,6 +88,7 @@ Below is a list of possible types of commits, so if you are a contributor to thi
 6. **refactor**: A code change that neither fixes a bug nor adds a feature
 7. **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 8. **test**: Adding missing tests or correcting existing tests
+8. **config**: Adding configuration
 
 **Note**: everything in a git commit message are lower-cased and does not end with a period.
 
