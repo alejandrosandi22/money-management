@@ -6,22 +6,40 @@ import { AuthFormProps } from '../../../types';
 import { IconFacebook, IconGoogle, IconSlack } from '../../utils/icons';
 
 export default function AuthForm({ type }: AuthFormProps) {
+  const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    signIn('email', { email }).finally(() => setLoading(false));
+    signIn('email', { email, name }).finally(() => setLoading(false));
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
+        {type === 'register' && (
+          <div>
+            <label
+              htmlFor='name'
+              className='mb-3 block text-base font-medium text-primary'
+            >
+              Name
+            </label>
+            <input
+              type='text'
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              placeholder='Your name'
+              className='block w-full rounded border border-gray-300 p-2.5 text-gray-900 hover:bg-gray-100 focus:border-primary focus:ring-primary sm:text-sm'
+            />
+          </div>
+        )}
         <div>
           <label
             htmlFor='email'
-            className='mb-3 block text-base font-medium text-primary'
+            className='my-3 block text-base font-medium text-primary'
           >
             Email
           </label>
@@ -31,6 +49,7 @@ export default function AuthForm({ type }: AuthFormProps) {
             value={email}
             placeholder='name@domain.com'
             className='block w-full rounded border border-gray-300 p-2.5 text-gray-900 hover:bg-gray-100 focus:border-primary focus:ring-primary sm:text-sm'
+            required
           />
         </div>
         {type === 'signin' && (
@@ -70,13 +89,22 @@ export default function AuthForm({ type }: AuthFormProps) {
         or sign up with
       </p>
       <div className='flex items-center justify-center gap-2.5'>
-        <button className='grid place-items-center border border-gray-200 p-3 hover:bg-gray-100'>
+        <button
+          onClick={() => signIn('google')}
+          className='grid place-items-center border border-gray-200 p-3 hover:bg-gray-100'
+        >
           <IconGoogle />
         </button>
-        <button className='grid place-items-center border border-gray-200 p-3 hover:bg-gray-100'>
+        <button
+          onClick={() => signIn('facebook')}
+          className='grid place-items-center border border-gray-200 p-3 hover:bg-gray-100'
+        >
           <IconFacebook />
         </button>
-        <button className='grid place-items-center border border-gray-200 p-3 hover:bg-gray-100'>
+        <button
+          onClick={() => signIn('slack')}
+          className='grid place-items-center border border-gray-200 p-3 hover:bg-gray-100'
+        >
           <IconSlack />
         </button>
       </div>

@@ -15,6 +15,7 @@ declare global {
       EMAIL_SERVER_PORT: number;
       EMAIL_FROM: string;
       DATABASE_URL: string;
+      JWT_SECRET: string;
     }
   }
 }

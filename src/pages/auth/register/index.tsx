@@ -6,7 +6,7 @@ export default function Register() {
   return (
     <div className='grid min-h-screen lg:grid-cols-2'>
       <div className='flex h-full w-full items-center justify-center'>
-        <div className='w-full max-w-lg space-y-8'>
+        <div className='w-full max-w-md space-y-8'>
           <h1 className='text-center text-3xl font-extrabold text-primary'>
             Register
           </h1>
