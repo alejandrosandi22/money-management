@@ -10,4 +10,9 @@
   .hover-button:hover svg {
     transform: translateX(5px);
   }
+
+  .grid-nav-layout {
+    display: grid;
+    grid-template-columns: 256px calc(100% - 256px);
+  }
 }
