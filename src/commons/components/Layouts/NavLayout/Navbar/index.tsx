@@ -4,7 +4,7 @@ import Notifications from './Notifications';
 
 export default function Navbar() {
   return (
-    <nav className='flex h-20 w-full items-center justify-between bg-white py-2.5 px-4'>
+    <nav className='grid-layout-navbar sticky top-0 flex h-20 items-center justify-between bg-white py-2.5 px-4'>
       <SearchForm />
       <ul className='flex items-center space-x-7'>
         <li>

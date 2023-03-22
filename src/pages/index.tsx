@@ -1,26 +1,28 @@
 import { GetServerSideProps } from 'next';
 import { getServerSession } from 'next-auth';
-import { useSession } from 'next-auth/react';
+import Footer from '../commons/components/Footer';
 import NavLayout from '../commons/components/Layouts/NavLayout';
 import SEOLayout from '../commons/components/Layouts/SEOLayout';
+import {
+  ChartSection,
+  Header,
+  Summary,
+  TransactionHistory,
+} from '../components/Dashboard/index';
 import { authOptions } from './api/auth/[...nextauth]';
 
 export default function Dashboard() {
-  const { data: session, status } = useSession();
-
-  if (status === 'loading') {
-    return <p>Loading...</p>;
-  }
-
-  if (status === 'unauthenticated') {
-    return <span>unauthenticated</span>;
-  }
-
   return (
     <SEOLayout pageTitle='Dashboard'>
       <NavLayout>
-        <div>
-          <h1>Dashbaord</h1>
+        <div className='h-full overflow-y-auto px-8 py-2.5'>
+          <Header />
+          <div className='space-y-2.5'>
+            <Summary />
+            <ChartSection />
+            <TransactionHistory />
+            <Footer />
+          </div>
         </div>
       </NavLayout>
     </SEOLayout>

@@ -10,7 +10,7 @@ import { IconApp } from '../../../../utils/icons';
 
 export default function Sidebar() {
   return (
-    <aside className='h-full w-64 space-y-8 bg-primary'>
+    <aside className='grid-layout-sidebar fixed top-0 left-0 h-full w-64 space-y-8 bg-primary'>
       <ul className='w-full px-2.5 pt-2.5'>
         <li>
           <Link
