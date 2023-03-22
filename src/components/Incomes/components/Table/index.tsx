@@ -41,11 +41,7 @@ export default function Table() {
             <td className='px-6 py-4'>Salary deposit</td>
             <td className='px-6 py-4'>$250,000.00</td>
             <td className='px-6 py-4'>₡560.00</td>
-            <td className='px-6 py-4'>
-              <span className='mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-sm font-medium text-green-800'>
-                Income
-              </span>
-            </td>
+            <td className='px-6 py-4'>Salary</td>
             <td className='px-6 py-4'>Businesses</td>
             <td className='px-6 py-4'>15/02/2023</td>
             <td className='px-6 py-4'>
@@ -62,12 +58,8 @@ export default function Table() {
             <td className='px-6 py-4'>Gym monthly payment</td>
             <td className='px-6 py-4'>₡35.00</td>
             <td className='px-6 py-4'>₡525.00</td>
-            <td className='px-6 py-4'>
-              <span className='mr-2 rounded-md bg-red-100 px-2.5 py-0.5 text-sm font-medium text-red-800'>
-                Spent
-              </span>
-            </td>
-            <td className='px-6 py-4'>Businesses</td>
+            <td className='px-6 py-4'>Salary</td>
+            <td className='px-6 py-4'>Personal</td>
             <td className='px-6 py-4'>15/02/2023</td>
             <td className='px-6 py-4'>
               <TableDropdown />
@@ -83,12 +75,59 @@ export default function Table() {
             <td className='px-6 py-4'>Service payment</td>
             <td className='px-6 py-4'>₡70,000.00</td>
             <td className='px-6 py-4'>₡600.00</td>
+            <td className='px-6 py-4'>Salary</td>
+            <td className='px-6 py-4'>Saving</td>
+            <td className='px-6 py-4'>15/02/2023</td>
             <td className='px-6 py-4'>
-              <span className='mr-2 rounded-md bg-green-100 px-2.5 py-0.5 text-sm font-medium text-green-800'>
-                Income
-              </span>
+              <TableDropdown />
             </td>
-            <td className='px-6 py-4'>Businesses</td>
+          </tr>
+          <tr className='bg-white'>
+            <th
+              scope='row'
+              className='whitespace-nowrap px-6 py-4 font-medium text-gray-900'
+            >
+              4
+            </th>
+            <td className='px-6 py-4'>Service payment</td>
+            <td className='px-6 py-4'>₡70,000.00</td>
+            <td className='px-6 py-4'>₡600.00</td>
+            <td className='px-6 py-4'>Salary</td>
+            <td className='px-6 py-4'>Saving</td>
+            <td className='px-6 py-4'>15/02/2023</td>
+            <td className='px-6 py-4'>
+              <TableDropdown />
+            </td>
+          </tr>
+          <tr className='bg-white'>
+            <th
+              scope='row'
+              className='whitespace-nowrap px-6 py-4 font-medium text-gray-900'
+            >
+              5
+            </th>
+            <td className='px-6 py-4'>Service payment</td>
+            <td className='px-6 py-4'>₡70,000.00</td>
+            <td className='px-6 py-4'>₡600.00</td>
+            <td className='px-6 py-4'>Salary</td>
+            <td className='px-6 py-4'>Saving</td>
+            <td className='px-6 py-4'>15/02/2023</td>
+            <td className='px-6 py-4'>
+              <TableDropdown />
+            </td>
+          </tr>
+          <tr className='bg-white'>
+            <th
+              scope='row'
+              className='whitespace-nowrap px-6 py-4 font-medium text-gray-900'
+            >
+              6
+            </th>
+            <td className='px-6 py-4'>Service payment</td>
+            <td className='px-6 py-4'>₡70,000.00</td>
+            <td className='px-6 py-4'>₡600.00</td>
+            <td className='px-6 py-4'>Salary</td>
+            <td className='px-6 py-4'>Saving</td>
             <td className='px-6 py-4'>15/02/2023</td>
             <td className='px-6 py-4'>
               <TableDropdown />
