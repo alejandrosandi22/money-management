@@ -10,4 +10,33 @@
   .hover-button:hover svg {
     transform: translateX(5px);
   }
+
+  .grid-nav-layout {
+    display: grid;
+    grid-template-columns: 16rem calc(100% - 16rem);
+    grid-template-rows: 4rem calc(100% - 4rem);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    grid-template-areas:
+      'sidebar navbar'
+      'sidebar content';
+  }
+
+  .grid-chart {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid-layout-sidebar {
+    grid-area: sidebar;
+  }
+
+  .grid-layout-navbar {
+    grid-area: navbar;
+  }
+
+  .grid-layout-content {
+    grid-area: content;
+  }
 }

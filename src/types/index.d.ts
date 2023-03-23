@@ -17,3 +17,7 @@ export interface SEOLayoutProps {
   pageTitle?: string;
   pageDescription?: string;
 }
+
+export interface NavLayoutProps {
+  children: React.ReactNode;
+}

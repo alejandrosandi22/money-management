@@ -25,6 +25,7 @@ export default function SEOLayout({
         <meta property='og:description' content={description} />
         <meta property='og:type' content='website' />
         <link rel='canonical' href={url} />
+        <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
       </Head>
       {children}
     </>

@@ -36,10 +36,10 @@ export default function AuthForm({ type }: AuthFormProps) {
             />
           </div>
         )}
-        <div>
+        <div className='my-3'>
           <label
             htmlFor='email'
-            className='my-3 block text-base font-medium text-primary'
+            className='mb-3 block text-base font-medium text-primary'
           >
             Email
           </label>
@@ -53,7 +53,7 @@ export default function AuthForm({ type }: AuthFormProps) {
           />
         </div>
         {type === 'signin' && (
-          <div className='mb-6 mt-3'>
+          <div className='mb-3'>
             <div className='flex items-start'>
               <div className='flex items-center'>
                 <input
