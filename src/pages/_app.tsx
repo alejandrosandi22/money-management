@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Loader from '../commons/components/Loader';
 import '../styles/globals.css';
+import '../types/string.extensions';
 
 const inter = Inter({ subsets: ['latin'] });
 
